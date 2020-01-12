@@ -1,6 +1,6 @@
-This is a React, Reduxn and Redux-Persist Boilerplate
+# This is a React, Redux and Redux-Persist Boilerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Built with  [Create React App](https://github.com/facebook/create-react-app).
 
 ## How to use
 
