@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Posts from './components/Posts';
+import Postform from './components/Postform';
+import { Provider } from 'react-redux'
 
+import output from './store'
+import { PersistGate } from 'redux-persist/integration/react'
+import Loading from './components/Loading';
+
+const { persistor, store } = output
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Provider store={store}>
+      <PersistGate loading={<Loading />} persistor={persistor}>
+        <div className="App">
+          <div className="container">
+            <Postform />
+            <hr/>
+            <Posts />
+          </div>
+        </div>
+      </PersistGate>
+    </Provider>
+    
   );
 }
 
